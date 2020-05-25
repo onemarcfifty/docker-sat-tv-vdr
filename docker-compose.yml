@@ -1,0 +1,19 @@
+version: '3'
+services:
+  vdr:
+    build: .
+    image: vdr:debian
+    container_name: vdr
+    ports:
+        - "8008:8008"
+        - "37890:37890"
+        - "6419:6419"
+        - "3000:3000" 
+        - "34890:34890"
+        - "2270:2270"
+    volumes: 
+        - "/mnt/data/videos:/video"
+    devices:
+        - "/dev/dvb:/dev/dvb"
+    tty: true
+        
